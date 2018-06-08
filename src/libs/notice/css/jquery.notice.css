@@ -1,0 +1,140 @@
+/*弹出框的全屏背景*/
+.jq-notice-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 20;
+}
+/*隐藏弹出框背景*/
+.jq-notice-container.hidden {
+    width: 0;
+    height: 0;
+}
+
+/*弹出框内容*/
+.jq-notice-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: -190px 0 0 -250px;
+    width: 500px;
+    transition: transform 300ms ease-in-out;
+    background: transparent;
+    transform-origin:80% 20%;
+}
+/*隐藏弹出框内容*/
+.jq-notice-container.hidden .jq-notice-content {
+    transform:scale(0);
+    transition: transform 300ms ease-in-out;
+}
+
+/*弹出框header样式*/
+.jq-notice-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #f14c47;
+    height: 30px;
+    width: 500px;
+}
+.jq-notice-header:hover {
+    cursor: move;
+}
+
+/*弹出框提示图片*/
+.jq-notice-header i {
+    display: inline-block;
+}
+.jq-notice-header i:nth-of-type(1) {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    left: 5px;
+    background: url(../image/notice_warning.png);
+}
+
+.jq-notice-header span {
+    display: block;
+    padding-left: 50px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 18px;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*弹出框关闭按钮*/
+.jq-notice-header i:nth-of-type(2) {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 5px;
+    top: 7px;
+    background: url(../image/notice_close.png);
+
+}
+.jq-notice-header i:nth-of-type(2):hover {
+    cursor: pointer;
+}
+
+/*弹出框内容主体*/
+.jq-notice-context {
+    background-color: white;
+    padding: 10px 20px;
+    min-height: 250px;
+    max-height: 400px;
+    color: black;
+    overflow: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+@media all and (max-width: 500px) {
+    .jq-notice-content {
+        width: 300px;
+        margin: -200px 0 0 -150px;
+    }
+}
+
+.jq-notice-context .input-group {
+    margin: 10px auto;
+    vertical-align: top;
+}
+.jq-notice-context .btn {
+    margin: 0 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 18px;
+    user-select: none;
+    background: #D9534F;
+    color: #fff;
+}
+.jq-notice-context .btn:hover {
+    background: #C74743;
+
+}
+.discription_dialog {
+    height: 200px;
+    padding: 20px 0 10px 0;
+    font-size: 14px;
+    text-indent: 16px;
+}
+.divOperation {
+    display: flex;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 3px 2px;
+    justify-content: flex-end;
+    float: right;
+    height: 32px;
+}
