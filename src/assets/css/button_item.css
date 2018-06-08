@@ -1,0 +1,30 @@
+button {
+    outline: none;
+    border:0px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 60px;
+    height: 30px;
+    color: #fff;
+    background-color:#2d8cf0;
+    border: 1px #2d8cf0 solid;
+    border-radius: 15px;
+}
+.submit-btn:hover {
+    background-color:#57A3F3;
+}
+
+.reset-btn {
+    width: 60px;
+    height: 30px;
+    color: #000;
+    background-color:#fff;
+    border: 1px #ccc solid;
+    border-radius: 15px;
+}
+.reset-btn:hover {
+    border: 1px #2d8cf0 solid;
+    color: #2d8cf0;
+}
