@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <link rel="stylesheet" href="../../assets/reset.css">
+    <link rel="stylesheet" href="./sortTable.css">
+</head>
+<body>
+<table id="sortTable"></table>
+<script src="sortTable.js"></script>
+<script>
+var sortTable = new SortTable({
+        ele: document.getElementById('sortTable'),
+        title: ["Name", "Chinese", "Math", "Italian", "Total"],
+        data: [
+            ["Jack", "80", "90", "78", "248"],
+            ["Tom", "89", "67", "100", "256"],
+            ["Rowling", "100", "88", "77", "265"],
+        ],
+    });
+sortTable.init();
+</script>
+</body>
+</html>

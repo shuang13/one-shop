@@ -1,0 +1,18 @@
+@import url("./../../assets/reset.css");
+@import url("./../../libs/font-awesome/css/font-awesome.css");
+@import url("./../../assets/css/input_item.css");
+@import url("./../../assets/css/button_item.css");
+
+body {
+    background: #ccc;
+}
+.login-form {
+    margin: 100px auto;
+    padding: 50px 50px 50px 0;
+    width: 400px;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+
+}
