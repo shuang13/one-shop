@@ -204,7 +204,7 @@ Page.prototype = {
         this.setData();
         if (this.isValidate() && this.isPass()) {
             alert('登录成功')
-            utils.jumpUrl('../home/home.html');
+            utils.jumpUrl('../home/index.html');
         } else {
             return false;
         }
