@@ -23,6 +23,54 @@ header {
     font-size: 2em;
 }
 
+.logo {
+    padding: 0 2em;
+    color: #2d8cf0;
+}
+
+.inform {
+    padding: 0 2em;
+}
+
+.inform span {
+    margin-right: 1em;
+}
+
+.ivu-badge {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+a {
+    color: #2d8cf0;
+    background: 0 0;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.ivu-icon {
+    display: inline-block;
+    font-family: Ionicons;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.ivu-icon-ios-cart:before {
+    content: "\F3F8";
+}
+
+.ivu-icon-email:before {
+    content: "\F132";
+}
 .main {
     height: calc(100% - 80px);
     display: flex;
