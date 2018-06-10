@@ -1,5 +1,4 @@
-export default {
-    // 用户列表
+var state = {
     users: {
         name: 'users',
         userList: [{
