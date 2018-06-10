@@ -1,0 +1,22 @@
+#sortTable {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #F8F8F9;
+    font-size: 14px;
+}
+
+#sortTable th {
+    height: 40px;
+    line-height: 40px;
+}
+.data-row {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #eaecef;
+    background: #fff;
+}
+.data-row:hover {
+    background: #F1F8FF;
+}
