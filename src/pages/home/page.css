@@ -3,7 +3,9 @@
     margin: 0;
 
 }
- 
+li {
+    list-style: none;
+}
 body {
     overflow-y: hidden;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
@@ -17,7 +19,16 @@ body {
     height: 100%;
     min-width: 992px;
 }
-
+.sub-menu {
+    background: #363e4f;
+}
+.sub-menu-item {
+    display: block;
+    color: #495060;
+    font-size: 14px;
+    padding-left: 2px; 
+    display: none;
+}
 header {
     min-width: 400px;
     height: 50px;
@@ -70,25 +81,7 @@ a {
     height: 30px;
  }
 
-.ivu-icon {
-    display: inline-block;
-    font-family: Ionicons;
-    speak: none;
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    text-rendering: auto;
-    line-height: 1;
-}
 
-.ivu-icon-ios-cart:before {
-    content: "\F3F8";
-}
-
-.ivu-icon-email:before {
-    content: "\F132";
-}
 .main {
     height: calc(100% - 80px);
     display: flex;
@@ -96,9 +89,83 @@ a {
 
 .aside {
     width: 200px;
+    height: 100%;
     background: #495060;
     height: 624px;
     overflow-y: scroll;
+}
+
+.ivu-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    color: #495060;
+    font-size: 14px;
+    position: relative;
+    z-index: 900;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.ivu-avatar-large.ivu-avatar-icon {
+    font-size: 24px;
+ }
+.ivu-avatar-large {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+}
+
+ivu-avatar {
+    display: inline-block;
+    text-align: center;
+    background: #ccc;
+    color: #fff;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+.ivu-avatar-large>* {
+    line-height: 40px;
+}
+.ivu-icon {
+    display: inline-block;
+    font-family: Ionicons;
+    width: 20px;
+    height: 21px;
+    line-height: 1;
+}
+.fa-user-circle:before {
+    content: "\F213";
+}
+
+.jiantou {
+    float: right;
+    position: relative;
+    top: 4px;
+}
+.account p {
+    margin-left: 2em;
+}
+
+.change-acount {
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    background-color: rgba(73,80,96,.8);
+    display: none;
+}
+.jiantou2 {
+    display: none !important;
+}
+
+.jiantou1 {
+    float: right;
 }
 .menu-item {
     color: rgba(255, 255, 255, 0.7);
@@ -107,6 +174,27 @@ a {
     outline: 0;
     list-style: none;
     font-size: 14px;
+}
+
+.menu-item:hover {
+    color: #fff;
+}
+.sub-item {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 14px 24px;
+    display: block;
+    outline: 0;
+    list-style: none;
+    font-size: 14px;
+}
+
+.selected {
+    color: #2d8cf0,
+    border-right: 2px solid #2d8cf0;
+}
+
+.menu-item i {
+    margin-right: 6px;
 }
 
 footer {
