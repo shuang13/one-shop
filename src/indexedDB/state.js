@@ -207,4 +207,5 @@ State.prototype = {
     }
 };
 var oState = new State();
+oState.init();
 var state = oState.data;
