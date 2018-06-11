@@ -14,7 +14,6 @@ var Page = function() {
 Page.prototype = {
     init: function() {
         var _this = this;
-        oState.init();
         $('.file-btn').on('change', function(e) {
             _this.readAsDataURL();
         });
@@ -91,5 +90,7 @@ Page.prototype = {
     },
 }
 var page = new Page();
-page.init();
+setTimeout(function() {
+    page.init();
+}, 500);
 })();

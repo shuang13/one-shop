@@ -42,8 +42,8 @@ Store.prototype = {
     // 详情页商品
     getDetailGoods(state, goods) {
         for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
-            if (state.goods.goodsList[i].coding === goods.coding) {
-                state.goods.detailGoods = goods;
+            if (state.goods.goodsList[i].coding == goods.coding) {
+                state.goods.detailGoods = state.goods.goodsList[i];
             }
         }
     },

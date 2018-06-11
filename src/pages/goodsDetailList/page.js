@@ -49,7 +49,5 @@ Page.prototype = {
 var page = new Page();
 setTimeout(function() {
     page.init();
-    // console.log(state.goods)
-
 }, 500);
 })();

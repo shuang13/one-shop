@@ -37,5 +37,9 @@ Utils.prototype = {
             window.location.href = url;
         }, time);
     },
+    getUrlParam: function() {
+        var param = window.location.href.split("?")[1].split("=")[1];
+        return decodeURI(param);
+    },
 };
 var utils = new Utils();
