@@ -1,0 +1,45 @@
+.goods-item {
+    float: left;
+    padding: 10px;
+    width: 160px;
+    height: 220px;
+    background: #fff;
+    border: 1px solid #000;
+    color: #2b85e4;
+}
+.inner img {
+    display: block;
+    width: 160px;
+    height: 160px;
+}
+.goods-name {
+    padding: 14px 0;
+    font-size: 14px;
+
+}
+.inner-bottom {
+    font-size: 16px;
+    overflow: hidden;
+}
+.goods-price {
+    float: left;
+}
+.goods-num {
+    float: right;
+}
+.cover{
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 220px;
+    content: ''; 
+    opacity: 0;
+    background: url('../add.png') no-repeat 50% 50%;
+    transition: opacity 1s;
+    z-index: 99;
+    cursor: pointer;
+}
+.cover:hover {
+    opacity: 0.8;
+
+}

@@ -47,6 +47,14 @@ Store.prototype = {
             }
         }
     },
+    // 根据商品编码查找
+    getByCoding(state, coding) {
+        for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
+            if (state.goods.goodsList[i].coding == coding) {
+                return state.goods.goodsList[i];
+            }
+        }
+    },
     // 删除商品
     deleteGoods(state) {
         for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
@@ -166,6 +174,7 @@ Store.prototype = {
     addShoppingCart(state, goods) {
         state.shoppingCart.shoppingCartList.push(goods);
         state.shoppingCart.number += 1;
+        console.log(state.shoppingCart)
     },
     // 删除购物车商品
     deleteShoppingCart(state, index) {

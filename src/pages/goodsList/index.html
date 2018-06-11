@@ -1,96 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>V-shop</title>
-	<link rel="stylesheet" type="text/css" href="page.css">
-	<link rel="stylesheet" type="text/css" href="css/goodList.css">
-	<link rel="stylesheet" type="text/css" href="../../libs/font-awesome/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>one shop</title>
+    <link rel="stylesheet" href="page.css">
 </head>
 <body>
-	<header>
+	<div id="goods-list">
 		
-	</header>
-	<div class="main">
-		<div class="main-left">
-			<ul class="aside">
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-				<li class="menu-item"></li>
-			</ul>
-		</div>
-		<div class="main-right">
-			<div class="goods-list">
-				<div class="search-box">
-					<div class="search-input">
-						<Input v-model="searchValue" placeholder="请输入商品编码或名称...">&#009;
-						</Input>
-						<button class="btn blue-btn"><i class="fa fa-search" aria-hidden="true"></i>&#009;搜素</button>
-						
-					</div>
-					<div class="search-list">
-						<button class="allgoods">全部商品</button>
-						<button class="snacks">休闲零食</button>
-						<button class="drink">酒水饮料</button>
-						<button class="food">粮油副食</button>
-						<button class="fruit">生鲜水果</button>
-						<button class="toiletries">日常洗护</button>
-						<button class="kitchen">厨卫用品</button>
-						<button class="another">其它品类</button>
-					</div>
-				</div>
-				<div class="goods-kinds">
-					<ul class="kinds">
-						<li><a href="#" onclick="getGoodsByDefault()">默认</a></li>
-						<li><a href="#" onclick="getGoodsByPrice()">价格</a></li>
-						<li><a href="#" onclick="getGoodsBySall()">销量</a></li>
-						<li><a href="#" onclick="getGoodsByStock()">库存</a></li>
-					</ul>
-				</div><!-- <div class="clear-float"></div> -->
-				<div class="all-goods">
-					<div class="goods-info">
-						<div class="goods-img">
-							<a href="#" onclick="addShoppingCart()"><img title="加入购物车" src="test.jpg"></a>
-						</div>
-						<div class="goods-name">
-							<span>商品名称</span>
-						</div>
-						<div class="goods-detail">
-							<span>￥233</span>
-							<span>&nbsp;100</span>
-						</div>
-					</div>
-					<div class="goods-info">
-						<div class="goods-img">
-							<a href="#" onclick="addShoppingCart()"><img title="加入购物车" src="test.jpg"></a>
-						</div>
-						<div class="goods-name">
-							<span>test</span>
-						</div>
-						<div class="goods-detail">
-							<span>￥233</span>
-							<span>&nbsp;100</span>
-						</div>
-					</div>
-					<div class="goods-info">
-						<div class="goods-img">
-							<a href="#" onclick="addShoppingCart()"><img title="加入购物车" src="test.jpg"></a>
-						</div>
-						<div class="goods-name">
-							<span>test</span>
-						</div>
-						<div class="goods-detail">
-							<span>￥233</span>
-							<span>&nbsp;100</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	</html>
+	</div>
+    <script src="../../libs/jq/jquery.min.js"></script>
+    <script src="../../utils.js"></script>
+    <script src="../../indexedDB/indexedDB.js"></script>
+    <script src="../../indexedDB/store.js"></script>
+    <script src="../../indexedDB/state.js"></script>
+
+    <script src="./../../components/sortTable/sortTable.js"></script>
+    <script src="page.js"></script>
+
+ 
+</body>
+</html>

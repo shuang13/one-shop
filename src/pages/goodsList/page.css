@@ -1,70 +1,10 @@
-* {
-	padding: 0;
-	margin: 0;
+@import url("./../../assets/reset.css");
+@import url("./../../libs/font-awesome/css/font-awesome.css");
 
-}
- 
-body {
-    overflow-y: hidden;
-}
+@import url("./../../assets/css/input_item.css");
+@import url("./../../assets/css/button_item.css");
+@import url("./../../assets/css/tab.css");
 
-header {
-	min-width: 400px;
-    height: 50px;
-    background-color: #1c2438;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #fff;
-    font-size: 2em;
-}
-
-.main {
-    height: calc(100% - 80px);
-    display: flex;
-}
-
-.aside {
-    width: 200px;
-    background: #495060;
-    height: 624px;
-    overflow-y: scroll;
-}
-.menu-item {
-    color: rgba(255, 255, 255, 0.7);
-    padding: 14px 24px;
-    display: block;
-    outline: 0;
-    list-style: none;
-    font-size: 14px;
-}
-
-footer {
-    height: 30px;
-    background-color: #495060;
-    color: #fff;
-    font-size: 1em;
-    line-height: 30px;
-    text-align: center;
-}
-
-footer span {
-    color: #2d8cf0;
-    background: 0 0;
-    text-decoration: none;
-    outline: 0;
-    cursor: pointer;
-    transition: color .2s ease
-}
-
-.main-right {
-    width: calc(100% - 200px);
-    height: 100%;
-    background-color: #f8f8f9;
-    padding: 0 10px;
-    overflow-y: scroll;
+.goods-item {
+    margin: 10px;
 }
