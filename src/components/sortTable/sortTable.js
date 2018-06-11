@@ -7,6 +7,7 @@ var SortTable = function(option) {
 }
 SortTable.prototype = {
     init: function(option) {
+        $(this.ele).empty();
         this.createTable();
     },
     createTable: function() {
