@@ -1,7 +1,6 @@
-import IndexedDB from '../indexedDB/IndexedDB'
-
-export default {
-    // 将IndexedDB中数据写入vuex
+var Store = function() {}
+Store.prototype = {
+    // 将shopDB中数据写入store
     getData(state, data) {
         state[data.name] = data.result;
     },
@@ -213,13 +212,13 @@ export default {
                         message.content = '商品：' + state.goods.goodsList[z].name + '，编码：' + state.goods.goodsList[z].coding + '，仅剩 ' + state.goods.goodsList[z].number + ' 件，请尽快补充！';
                         state.messages.messageList.unshift(message);
                         state.messages.number += 1;
-                        let vshopDB = null;
-                        IndexedDB.openDB('vshopDB', 1, vshopDB, {
-                            name: 'vshop',
+                        let oneShopDB = null;
+                        shopDB.openDB('oneShopDB', 1, oneShopDB, {
+                            name: 'oneShop',
                             key: 'name'
                         }, function(db) {
-                            let vshopDB = db;
-                            IndexedDB.putData(vshopDB, 'vshop', [state.messages]);
+                            let oneShopDB = db;
+                            shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
                         });
                     }
                 }
@@ -258,13 +257,13 @@ export default {
             }
         }
         state.messages.today = year + '-' + addZero(month) + '-' + addZero(day);
-        let vshopDB = null;
-        IndexedDB.openDB('vshopDB', 1, vshopDB, {
-            name: 'vshop',
+        let oneShopDB = null;
+        shopDB.openDB('oneShopDB', 1, oneShopDB, {
+            name: 'oneShop',
             key: 'name'
         }, function(db) {
-            let vshopDB = db;
-            IndexedDB.putData(vshopDB, 'vshop', [state.messages]);
+            let oneShopDB = db;
+            shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
         });
     },
     // 检查商品保质期
@@ -308,13 +307,13 @@ export default {
                 }
             }
             state.messages.today = today;
-            let vshopDB = null;
-            IndexedDB.openDB('vshopDB', 1, vshopDB, {
-                name: 'vshop',
+            let oneShopDB = null;
+            shopDB.openDB('oneShopDB', 1, oneShopDB, {
+                name: 'oneShop',
                 key: 'name'
             }, function(db) {
-                let vshopDB = db;
-                IndexedDB.putData(vshopDB, 'vshop', [state.messages]);
+                let oneShopDB = db;
+                shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
             });
         }
     },
@@ -357,4 +356,5 @@ export default {
             }
         }
     }
-}
+};
+var store = new Store();

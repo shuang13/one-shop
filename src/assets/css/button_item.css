@@ -1,10 +1,10 @@
 .btn {
-    outline: none;
-    border:0px;
-    cursor: pointer;
     padding: 0 20px;
     height: 30px;
+    border:0px;
     border-radius: 15px;
+    outline: none;
+    cursor: pointer;
 }
 .btn i {
     padding-right: 5px;
