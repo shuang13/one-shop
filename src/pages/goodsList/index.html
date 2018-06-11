@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>V-shop</title>
 	<link rel="stylesheet" type="text/css" href="page.css">
+	<link rel="stylesheet" type="text/css" href="css/goodList.css">
+	<link rel="stylesheet" type="text/css" href="../../libs/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 	<header>
@@ -23,11 +25,46 @@
 			</ul>
 		</div>
 		<div class="main-right">
-			在这里面写你的代码，你每写一个页面直接将这个页面中的内容复制一边，然后在这个div里面写相应的内容！
+			<div class="goods-list">
+				<div class="search-box">
+					<div class="search-input">
+						<Input v-model="searchValue" placeholder="请输入商品编码或名称...">&#009;
+						</Input>
+						<button class="btn blue-btn"><i class="fa fa-search" aria-hidden="true"></i>&#009;搜素</button>
+						
+					</div>
+					<div class="search-list">
+						<button class="allgoods">全部商品</button>
+						<button class="snacks">休闲零食</button>
+						<button class="drink">酒水饮料</button>
+						<button class="food">粮油副食</button>
+						<button class="fruit">生鲜水果</button>
+						<button class="toiletries">日常洗护</button>
+						<button class="kitchen">厨卫用品</button>
+						<button class="another">其它品类</button>
+					</div>
+				</div>
+				<div class="goods-kinds">
+					<ul class="kinds">
+						<li>默认</li>
+						<li>价格</li>
+						<li>销量</li>
+						<li>库存</li>
+					</ul>
+				</div>
+				<div class="goods-info">
+					<div class="goods-img">
+						<img src="C://Users//_lixuan//Pictures//b.jpg">
+					</div>
+					<div class="goods-name">
+						<span>test</span>
+					</div>
+					<div class="goods-detail">
+						<span>￥233</span>
+						<span>&nbsp;&nbsp;&nbsp;100</span>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<footer>
-		<span>©  V-Shop项目小组</span>
-	</footer>
-</body>
-</html>
+	</body>
+	</html>

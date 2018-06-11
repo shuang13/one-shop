@@ -1,0 +1,121 @@
+@import "../../../assets/css";
+.search-box {
+    padding: 10px;
+}
+.search-input {
+    display: flex;
+    justify-content: center;
+}
+.search-input>div {
+    max-width: 500px;
+    min-width: 250px;
+    padding-right: 15px;
+}
+.search-list {
+    padding: 10px 10px 0px 10px;
+    text-align: center;
+}
+.goods-kinds>ul{
+    float: left;
+    list-style-type: none;
+}
+.kinds>li{
+    float: left;
+    list-style-type: none;
+    width: 60px;
+    height: 29px;
+    margin-bottom: 5px;
+    text-align: center;
+    line-height:29px;
+    border: 1px solid gray;
+    border-bottom: none;
+}
+.search-list button {
+    padding: 1px 3px;
+    margin: 0px 5px;
+    color: #495060;
+    background-color: white;
+    border: 1px solid #dddee1;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.quick-search button:hover {
+    border: 1px solid #5cadff;
+    color: #5cadff;
+}
+.no-goods {
+    text-align: center;
+    font-size: 1.2em;
+}
+.goods {
+    cursor: pointer;
+    color: #2b85e4;
+    margin: 5px;
+}
+.goods-box {
+    padding: 10px;
+}
+.goods-box .img-box {
+    width: 100%;
+    height: 0px;
+    padding-bottom: 100%;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+.goods-box .img-box img {
+    width: 100%;
+}
+.goods-name {
+    height: 42px;
+    overflow: hidden;
+}
+.goods-message {
+    display: flex;
+}
+.goods-message>p {
+    width: 50%;
+}
+.goods-message p span {
+    font-weight: bold;
+}
+.goods-message>p:first-child {
+    text-align: left;
+}
+.goods-message>p:last-child {
+    text-align: right;
+}
+.goods .add-btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #dddee1;
+    opacity: 0.6;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.goods:hover .add-btn {
+    display: flex;
+}
+.goods-info{
+    width: 100px;
+    height: 170px;
+    margin-top: 50px;
+    overflow: left;
+    border: 1px solid white;
+}
+.goods-img{
+
+    width: 100px;
+    height: 100px;
+}
+.goods-detail{
+    overflow: hidden;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
