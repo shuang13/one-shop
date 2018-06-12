@@ -1,34 +1,19 @@
-* {
-    padding: 0;
-    margin: 0;
+@import url("../../assets/reset.css");
 
-}
-li {
-    list-style: none;
-}
+@import url("../../assets/reset.css");
+@import url("../../libs/font-awesome/css/font-awesome.min.css");
+@import url("../../libs/font-awesome/css/font-awesome.css");
+@import url("../../assets/css/input_item.css");
+@import url("../../assets/css/button_item.css");
+
 body {
-    overflow-y: hidden;
-    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #495060;
-    background-color: #fff;
+    overflow-y:hidden;
 }
-
 .app {
     height: 100%;
     min-width: 992px;
 }
-.sub-menu {
-    background: #363e4f;
-}
-.sub-menu-item {
-    display: block;
-    color: #495060;
-    font-size: 14px;
-    padding-left: 2px; 
-    display: none;
-}
+
 header {
     min-width: 400px;
     height: 50px;
@@ -46,6 +31,7 @@ header {
 
 .logo {
     padding: 0 2em;
+    font-size: 17px;
     color: #2d8cf0;
 }
 
@@ -57,14 +43,14 @@ header {
     margin-right: 1em;
 }
 
-.ivu-badge {
+.badge {
     position: relative;
     display: inline-block;
     line-height: 1;
     vertical-align: middle;
 }
 
-a {
+.info,.cart {
     color: #2d8cf0;
     background: 0 0;
     text-decoration: none;
@@ -75,27 +61,30 @@ a {
     font-size: 17px;
 }
  
- .ivu-badge i {
+ .badge i {
     display: inline-block;
     width: 19.5px;
     height: 30px;
  }
 
-
 .main {
+    position: fixed;
     height: calc(100% - 80px);
     display: flex;
 }
 
 .aside {
-    width: 200px;
+    position: fixed;
+    width: 100%;
     height: 100%;
     background: #495060;
-    height: 624px;
+}
+.main-left {
+    width: 200px;
+    background: #495060;
     overflow-y: scroll;
 }
-
-.ivu-menu {
+.menu {
     display: block;
     margin: 0;
     padding: 0;
@@ -111,37 +100,27 @@ a {
     align-items: center;
 }
 
-.ivu-avatar-large.ivu-avatar-icon {
-    font-size: 24px;
+.avatar-large.avatar-icon {
+    font-size: 23px;
  }
-.ivu-avatar-large {
+
+.avatar-large {
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius: 20px;
 }
 
-ivu-avatar {
-    display: inline-block;
-    text-align: center;
-    background: #ccc;
-    color: #fff;
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-}
-.ivu-avatar-large>* {
+.avatar-large>* {
     line-height: 40px;
 }
-.ivu-icon {
+
+.icon {
     display: inline-block;
     font-family: Ionicons;
     width: 20px;
     height: 21px;
     line-height: 1;
-}
-.fa-user-circle:before {
-    content: "\F213";
 }
 
 .jiantou {
@@ -156,10 +135,13 @@ ivu-avatar {
 .change-acount {
     position: absolute;
     top: 20px;
-    left: 45px;
+    width: 195px;
+    height: 49px;
+    padding-left: 20px;
     background-color: rgba(73,80,96,.8);
     display: none;
 }
+
 .jiantou2 {
     display: none !important;
 }
@@ -174,23 +156,45 @@ ivu-avatar {
     outline: 0;
     list-style: none;
     font-size: 14px;
+    cursor: pointer;
 }
-
+.active {
+    color: #2d8cf0;
+    border-right: 2px solid #2d8cf0;
+}
+.lin {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+.active  .link{
+    color: #2d8cf0;
+}
+.link {
+    text-decoration: none;
+    font-size: 14px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+}
+.link:hover{
+    color: #fff;
+}
 .menu-item:hover {
     color: #fff;
 }
 .sub-item {
     color: rgba(255, 255, 255, 0.7);
-    padding: 14px 24px;
+    padding: 14px 53px;
     display: block;
+    background-color: #363e4f;
     outline: 0;
     list-style: none;
     font-size: 14px;
 }
 
-.selected {
-    color: #2d8cf0,
-    border-right: 2px solid #2d8cf0;
+
+.sub-menu {
+    background: #363e4f;
 }
 
 .menu-item i {
@@ -202,8 +206,11 @@ footer {
     background-color: #495060;
     color: #fff;
     font-size: 1em;
-    line-height: 30px;
+    line-height: 20px;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 footer span {
@@ -217,8 +224,25 @@ footer span {
 
 .main-right {
     width: calc(100% - 200px);
-    height: 100%;
     background-color: #f8f8f9;
     padding: 0 10px;
     overflow-y: scroll;
+
+}
+
+
+.active1 {
+    border-right: none;
+    color: #fff;
+    background: #2d8cf0;
+}
+
+.sub-menu-item {
+    color: rgba(255, 255, 255, 0.7);
+    /*padding: 14px 24px;*/
+    outline: 0;
+    border-right:none;
+    color: #495060;
+    font-size: 14px;
+    display: none;
 }
