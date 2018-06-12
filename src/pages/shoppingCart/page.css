@@ -9,3 +9,23 @@
     float: none;
     width: 70px;
 }
+#count {
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #fff;
+    font-size: 14px;
+}
+#count tr {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #eaecef;
+    background: #fff;
+}
+#count td {
+    width: 200px;
+}
+#count #select {
+    width: 160px;
+}

@@ -174,7 +174,6 @@ Store.prototype = {
     addShoppingCart(state, goods) {
         state.shoppingCart.shoppingCartList.push(goods);
         state.shoppingCart.number += 1;
-        console.log(state.shoppingCart)
     },
     // 删除购物车商品
     deleteShoppingCart(state, index) {
@@ -182,9 +181,9 @@ Store.prototype = {
         state.shoppingCart.number -= 1;
     },
     // 删除已结算商品，同时减去库存，加上销量
-    deleteCheckoutGoods(state, goodsList) {
-        for (let i = 0, len = goodsList.length; i < len; i++) {
-            for (let j = state.shoppingCart.shoppingCartList.length - 1; j >= 0; j--) {
+    deleteCheckoutGoods(state, goodsList, count) {
+        for (var i = 0, len = goodsList.length; i < len; i++) {
+            for (var j = state.shoppingCart.shoppingCartList.length - 1; j >= 0; j--) {
                 if (goodsList[i].coding === state.shoppingCart.shoppingCartList[j].coding) {
                     state.shoppingCart.shoppingCartList.splice(j, 1);
                     state.shoppingCart.number -= 1;
@@ -192,8 +191,9 @@ Store.prototype = {
             }
             for (let z = 0, len = state.goods.goodsList.length; z < len; z++) {
                 if (goodsList[i].coding === state.goods.goodsList[z].coding) {
-                    state.goods.goodsList[z].number -= goodsList[i].count;
-                    state.goods.goodsList[z].sales[new Date().getMonth()] += goodsList[i].count;
+                    state.goods.goodsList[z].number -= count[i];
+
+                    state.goods.goodsList[z].sales[new Date().getMonth()] += count[i];
                     // 重置新消息提醒
                     state.messages.messageList.forEach(element => {
                         element.cellClassName = '';

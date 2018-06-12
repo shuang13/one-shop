@@ -16,3 +16,19 @@ body {
     border-radius: 5px;
     text-align: center;
 }
+.logo {
+    margin-bottom: 20px;
+    margin-left: 60px;
+    margin-top: -20px;
+}
+.logo img{
+    width: 80px;
+    vertical-align: middle;
+}
+.logo span {
+    font-size: 16px;
+    font-weight: bold;
+}
+.btn {
+    margin-left: 50px;
+}

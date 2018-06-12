@@ -2,11 +2,12 @@
 
 var Page = function() {
     this.data = {
-        coding: "",
-        name: "",
+        number: 0,
+        sum: 0,
     };
     this.list = [];
     this.buyNum = [];
+    this.goods = [];
 }
 Page.prototype = {
     init: function() {
@@ -20,26 +21,45 @@ Page.prototype = {
         $('#sortTable').on('input', function(e) {
             if (e.target.nodeName === 'INPUT') {
                 _this.changeHandler(e.target);
+                $('#count-btn').on('click', function(e) {
+                    _this.countHandler();
+
+                });
+
             }
         });
+
         $('#sortTable').on('click', function(e) {
             if (e.target.nodeName === 'BUTTON') {
                 _this.btnHandler(e.target);
             }
         });
+        $('#count-btn').on('click', function(e) {
+            _this.countHandler();
+
+        });
+
+
 
     },
     changeHandler: function(ele) {
         var index = $(ele).attr('data-index');
-        this.buyNum[index] = $(ele).val();
-        this.setData();
-        this.drawTable();
+        // 验证输入为0以上的整数，之后来改
+        if (!isNaN($(ele).val())) {
+            this.buyNum[index] = $(ele).val();
+            this.setData();
+            this.drawTable();
+        } else {
+            $(ele).val(1);
+            alert("请输入数字！");
+        }
+
     },
     btnHandler: function(ele) {
         // 根据商品编码查询
         var index = $(ele).attr('data-index');
         // 从购物车删除
-        store.deleteShoppingCart(state, index)
+        store.deleteShoppingCart(state, index);
 
         // 更新数据库
         var oneShopDB = null;
@@ -52,10 +72,31 @@ Page.prototype = {
             alert('删除成功');
 
         });
-        setTimeout(function() {
-            this.setData();
-            this.drawTable();
-        }, 500);
+
+    },
+    // 结算
+    countHandler: function() {
+        for (var i = 0; i < this.goods.length; i++) {
+            // 从购物车删除
+            for (var j = 0; j < state.goods.goodsList.length; j++) {
+                if (this.goods[i].coding == state.goods.goodsList[j].coding) {
+                    state.shoppingCart.shoppingCartList = [];
+                    state.goods.goodsList[j].number -= this.buyNum[i];
+                }
+            }
+        }
+        // 更新数据库
+        var oneShopDB = null;
+        shopDB.openDB('oneShopDB', 1, oneShopDB, {
+            name: 'oneShop',
+            key: 'name'
+        }, function(db) {
+            var oneShopDB = db;
+            shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
+            shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
+            alert('删除成功');
+
+        });
     },
     drawTable: function() {
         var sortTable = new SortTable({
@@ -64,11 +105,13 @@ Page.prototype = {
             data: this.list,
         });
         sortTable.init();
+        $('#count-all').html('<button class="btn red-btn" id="count-btn">确认结算</button>');
     },
     setData: function() {
-        var goods = state.shoppingCart.shoppingCartList;
-        console.log(goods)
-
+        this.goods = state.shoppingCart.shoppingCartList;
+        var goods = this.goods;
+        var number = 0;
+        var sum = 0;
         for (var i = 0; i < goods.length; i++) {
             this.list[i] = [goods[i]['name'],
                 goods[i]['price'],
@@ -77,14 +120,21 @@ Page.prototype = {
 
                 '<button class="btn red-btn" data-index=' + i + '>删除</button>'
             ];
-
-
+            number += Number(this.buyNum[i]);
+            sum += Number(goods[i]['price'] * this.buyNum[i]);
         }
+        $('#all-num').html('共' + number + '件');
+        $('#all-price').html('合计：' + sum + '元');
+        this.data.number = number;
+        this.data.sum = sum;
     },
 
 }
 var page = new Page();
 setTimeout(function() {
     page.init();
+
+
 }, 500);
+
 })();
