@@ -1,0 +1,82 @@
+.pop-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99,
+}
+.pop-box {
+    margin: 20px auto;
+    width: 350px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 14px;
+}
+.pop-box header {
+    position: relative;
+    padding: 14px 16px;
+    line-height: 1;
+    border-bottom: 1px solid #e9eaec;
+}
+.pop-box i {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    cursor: pointer;
+}
+.pop-content {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e9eaec;
+}
+.pop-box footer {
+    display: flex;
+    padding: 14px 16px;
+    line-height: 1;
+    justify-content:space-around;
+
+}
+.hidden {
+    display: none;
+}
+
+.btn {
+    padding: 0 20px;
+    height: 30px;
+    border:0px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.btn i {
+    padding-right: 5px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+.blue-btn {
+    color: #fff;
+    background-color:#2d8cf0;
+    border: 1px #2d8cf0 solid;
+}
+.white-btn {
+    color: #000;
+    background-color:#fff;
+    border: 1px #ccc solid;
+}
+.white-btn:hover {
+    border: 1px #2d8cf0 solid;
+    color: #2d8cf0;
+}
+.orange-btn {
+    color: #fff;
+    background-color:#f90;
+    border: 1px #f90 solid;
+}
+.red-btn {
+    color: #fff;
+    background-color:#e13c13;
+    border: 1px #e13c13 solid;
+}
