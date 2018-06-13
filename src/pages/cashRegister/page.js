@@ -33,13 +33,15 @@ Page.prototype = {
     },
     eventListener: function() {},
     setData: function() {
-        var goods = state.goods.goodsList;
-        console.log(goods)
+        var cashRegister = state.cashRegister.cashRegisterList;
+        console.log(cashRegister)
 
-        for (var i = 0; i < goods.length; i++) {
-            this.list[i] = [goods[i]['coding'],
-                goods[i]['name'],
-                '<button class="btn orange-btn" data-id=' + goods[i]['coding'] + '>查看详情</button>'
+        for (var i = 0; i < cashRegister.length; i++) {
+            this.list[i] = [cashRegister[i]['time'],
+                cashRegister[i]['cashier'],
+                cashRegister[i]['allCount'],
+                cashRegister[i]['allTotal'],
+                cashRegister[i]['mode'],
             ];
         }
     },

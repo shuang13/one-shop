@@ -8,6 +8,7 @@ var Page = function() {
     this.list = [];
     this.buyNum = [];
     this.goods = [];
+    this.cashList = [];
 }
 Page.prototype = {
     init: function() {
@@ -76,6 +77,7 @@ Page.prototype = {
     },
     // 结算
     countHandler: function() {
+        var _this = this;
         for (var i = 0; i < this.goods.length; i++) {
             // 从购物车删除
             for (var j = 0; j < state.goods.goodsList.length; j++) {
@@ -85,17 +87,59 @@ Page.prototype = {
                 }
             }
         }
-        // 更新数据库
-        var oneShopDB = null;
-        shopDB.openDB('oneShopDB', 1, oneShopDB, {
-            name: 'oneShop',
-            key: 'name'
-        }, function(db) {
-            var oneShopDB = db;
-            shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
-            shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
-            alert('删除成功');
+        var popContext = '<div class="form-item">' +
+            '<label class="form-label">应收</label>' +
+            '<div class="form-input-wrapper" >' +
+            '<input class="form-input" type="text" id="yingshou" value="' + _this.data.sum + '">' +
+            '</div>' +
+            '</div>' +
+            '<div class="form-item">' +
+            '<label class="form-label">实收</label>' +
+            '<div class="form-input-wrapper" >' +
+            '<input class="form-input" type="text" id="shishou">' +
+            '</div>' +
+            '</div>' +
+            '<div class="form-item">' +
+            '<label class="form-label">找零</label>' +
+            '<div class="form-input-wrapper">' +
+            '<input class="form-input" id="zhaoling" type="text">' +
+            '</div>' +
+            '</div>' +
+            '<script>' +
+            '$("#shishou").on("blur", function(){' +
+            'var zhaoling = Number($("#shishou").val())-Number($("#yingshou").val());' +
+            '$("#zhaoling").val(zhaoling);' +
+            '});' +
+            '</script>';
 
+
+        $.popUp({
+            title: "商品结算",
+            context: popContext,
+        }, function() {
+            var date = new Date();
+            _this.cashList.allCount = _this.data.number;
+            _this.cashList.allTotal = _this.data.sum;
+            _this.cashList.cashier = 'admin';
+            _this.cashList.goodsList = _this.goods;
+            _this.cashList.mode = '现金';
+            _this.cashList.time = utils.getTime();
+            store.addCashRegister(state, _this.cashList);
+
+            // 更新数据库
+            var oneShopDB = null;
+            shopDB.openDB('oneShopDB', 1, oneShopDB, {
+                name: 'oneShop',
+                key: 'name'
+            }, function(db) {
+                var oneShopDB = db;
+                shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
+                shopDB.putData(oneShopDB, 'oneShop', [state.cashRegister]);
+                shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
+                alert('删除成功');
+
+
+            });
         });
     },
     drawTable: function() {
