@@ -59,30 +59,37 @@ Page.prototype = {
         for(var n in _this.data){
             if(_this.data.coding==""||!(/^\d+$/).test(_this.data.coding)){
                 alert("请输入正确的商品编码！");
+                return false;
                 break;
              }    
              if(_this.data.name==""){
                 alert("请输入商品名！");
+                return false;
                 break;
             }  
             if(!(/^\d+$/g).test(_this.data.price)){
                 alert("请输入商品单价（正整数）！");
+                return false;
                 break;
             }
             if(!(/^\d+$/g).test(_this.data.number)){
                 alert("请输入商品数量（正整数）！");
+                return false;
                 break;
             }
             if(_this.data.date==""){
                 alert("请选择日期!");
+                return false;
                 break;
             }
             if(_this.data.category==""){
                 alert("请选择商品分类！");
+                return false;
                 break;
             }
             if(_this.data.image==""){
                 alert("请上传商品图片！");
+                return false;
                 break;
             } 
             else
