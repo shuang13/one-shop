@@ -4,6 +4,8 @@
 @import url("./../../assets/css/input_item.css");
 @import url("./../../assets/css/button_item.css");
 @import url("./../../assets/css/tab.css");
+@import url("./../../components/sortTable/sortTable.css");
+@import url("./../../components/popUp/popUp.css");
 
 .goods-item {
     margin: 10px;

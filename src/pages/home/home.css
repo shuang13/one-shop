@@ -1,8 +1,6 @@
-@import url("../../assets/reset.css");
 
 @import url("../../assets/reset.css");
 @import url("../../libs/font-awesome/css/font-awesome.min.css");
-@import url("../../libs/font-awesome/css/font-awesome.css");
 @import url("../../assets/css/input_item.css");
 @import url("../../assets/css/button_item.css");
 
@@ -14,7 +12,7 @@ body {
     min-width: 992px;
 }
 
-header {
+#page-header {
     min-width: 400px;
     height: 50px;
     background-color: #1c2438;
@@ -29,28 +27,28 @@ header {
     font-size: 2em;
 }
 
-.logo {
+#page-header .logo {
     padding: 0 2em;
     font-size: 17px;
     color: #2d8cf0;
 }
 
-.inform {
+#page-header .inform {
     padding: 0 2em;
 }
 
-.inform span {
+#page-header .inform span {
     margin-right: 1em;
 }
 
-.badge {
+#page-header .badge {
     position: relative;
     display: inline-block;
     line-height: 1;
     vertical-align: middle;
 }
 
-.info,.cart {
+#page-header .info, #page-header .cart {
     color: #2d8cf0;
     background: 0 0;
     text-decoration: none;
@@ -61,7 +59,7 @@ header {
     font-size: 17px;
 }
  
- .badge i {
+#page-header .badge i {
     display: inline-block;
     width: 19.5px;
     height: 30px;
@@ -69,22 +67,24 @@ header {
 
 .main {
     position: fixed;
+    width: 100%;
     height: calc(100% - 80px);
     display: flex;
 }
 
-.aside {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #495060;
-}
+
 .main-left {
     width: 200px;
     background: #495060;
     overflow-y: scroll;
 }
-.menu {
+.main-left .aside {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #495060;
+}
+.main-left .menu {
     display: block;
     margin: 0;
     padding: 0;
@@ -92,47 +92,46 @@ header {
     color: #495060;
     font-size: 14px;
     position: relative;
-    z-index: 900;
+    z-index: 9;
 }
 
-.account {
+.main-left .account {
     display: flex;
     align-items: center;
 }
 
-.avatar-large.avatar-icon {
+.main-left .avatar-large .avatar-icon {
     font-size: 23px;
  }
 
-.avatar-large {
+.main-left .avatar-large {
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius: 20px;
 }
 
-.avatar-large>* {
+.main-left .avatar-large>* {
     line-height: 40px;
 }
 
-.icon {
+.main-left .icon {
     display: inline-block;
-    font-family: Ionicons;
     width: 20px;
     height: 21px;
     line-height: 1;
 }
 
-.jiantou {
+.main-left .jiantou {
     float: right;
     position: relative;
     top: 4px;
 }
-.account p {
+.main-left .account p {
     margin-left: 2em;
 }
 
-.change-acount {
+.main-left .change-acount {
     position: absolute;
     top: 20px;
     width: 195px;
@@ -142,47 +141,46 @@ header {
     display: none;
 }
 
-.jiantou2 {
-    display: none !important;
-}
 
-.jiantou1 {
+.main-left .jiantou1 {
     float: right;
 }
-.menu-item {
+.main-left .menu-item {
     color: rgba(255, 255, 255, 0.7);
-    padding: 14px 24px;
+    padding: 14px 0;
+    width: 100%;
     display: block;
     outline: 0;
     list-style: none;
     font-size: 14px;
     cursor: pointer;
 }
-.active {
+.menu-item i {
+    margin-left: 18px;
+}
+.main-left .active {
     color: #2d8cf0;
     border-right: 2px solid #2d8cf0;
 }
-.lin {
+.main-left .lin {
     text-decoration: none;
     font-size: 14px;
     color: #fff;
 }
-.active  .link{
+.main-left .active  .link{
     color: #2d8cf0;
 }
-.link {
+.main-left .link {
     text-decoration: none;
     font-size: 14px;
     width: 100%;
     color: rgba(255, 255, 255, 0.7);
 }
-.link:hover{
+
+.main-left .menu-item:hover {
     color: #fff;
 }
-.menu-item:hover {
-    color: #fff;
-}
-.sub-item {
+.main-left .sub-item {
     color: rgba(255, 255, 255, 0.7);
     padding: 14px 53px;
     display: block;
@@ -193,15 +191,15 @@ header {
 }
 
 
-.sub-menu {
+.main-left .sub-menu {
     background: #363e4f;
 }
 
-.menu-item i {
+.main-left .menu-item i {
     margin-right: 6px;
 }
 
-footer {
+#page-footer {
     height: 30px;
     background-color: #495060;
     color: #fff;
@@ -213,13 +211,13 @@ footer {
     bottom: 0;
 }
 
-footer span {
+#page-footer span {
     color: #2d8cf0;
     background: 0 0;
     text-decoration: none;
     outline: 0;
     cursor: pointer;
-    transition: color .2s ease
+    transition: color .2s ease;
 }
 
 .main-right {

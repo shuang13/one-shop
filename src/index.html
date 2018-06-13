@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title><Document></Document></title>
+    <meta charset="UTF-8">
+    <title>one shop</title>
+    <link rel="stylesheet" href="pages/login/page.css">
 </head>
 <body>
 
+    <form class="login-form" action="##">
+        <div class="logo">
+            <h1>One Shop</h1>
+        </div>
+        <div class="form-item">
+            <label class="form-label">账号:</label>
+            <div class="form-input-wrapper">
+                <input id="username" class="form-input" type="text" placeholder="账号">
+                <p></p>
+
+            </div>
+        </div> 
+        <div class="form-item">
+            <label class="form-label">密码:</label>
+            <div class="form-input-wrapper">
+                <input id="password" class="form-input" type="password" placeholder="密码" >
+                <p></p>
+            </div>
+        </div>   
+        <button class="btn blue-btn" id="submit-btn">登录</button>   
+        <button class="btn white-btn" id="reset-btn">重置</button>   
+    </form>
+    <script src="libs/jq/jquery.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="indexedDB/indexedDB.js"></script>
+    <script src="indexedDB/store.js"></script>
+    <script src="indexedDB/state.js"></script>
+    <script src="pages/login/page.js"></script>
+    <script>
+        $('#password').on('focus', function() {
+            $('#logo').attr('src', '../../assets/logo-close.png');
+        });
+        $('#password').on('blur', function() {
+            $('#logo').attr('src', '../../assets/logo.png');
+            if ($('#password').val()==='') {
+                $('#password').siblings('p').html('密码不能为空');
+            }else {
+                $('#password').siblings('p').html('');
+                
+            }
+        });
+        $('#username').on('blur', function() {
+            if ($('#username').val()==='') {
+                $('#username').siblings('p').html('账号不能为空');
+            } else {
+                $('#username').siblings('p').html('');
+                
+            }
+        });
+    </script>
 </body>
-<script>
-    
-</script>
 </html>
