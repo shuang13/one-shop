@@ -35,8 +35,6 @@ Page.prototype = {
     },
     setData: function() {
         var goods = state.goods.goodsList;
-        console.log(goods)
-
         for (var i = 0; i < goods.length; i++) {
             this.list[i] = [goods[i]['coding'],
                 goods[i]['name'],

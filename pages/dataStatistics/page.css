@@ -5,3 +5,8 @@
 @import url("./../../assets/css/button_item.css");
 @import url("./../../components/sortTable/sortTable.css");
 @import url("./../../components/popUp/popUp.css");
+
+#chartmain {
+    width: 1200px;
+    height: 300px;
+}
