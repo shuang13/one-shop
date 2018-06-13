@@ -5,3 +5,40 @@
 @import url("./../../assets/css/button_item.css");
 @import url("./../../components/sortTable/sortTable.css");
 @import url("./../../components/popUp/popUp.css");
+
+.buy-num {
+    float: none;
+    width: 70px;
+}
+#count {
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #fff;
+    font-size: 14px;
+}
+#count tr {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #eaecef;
+    background: #fff;
+}
+#count td {
+    width: 200px;
+}
+#count #select {
+    width: 160px;
+}
+.form-label {
+    width: 90px;
+}
+.form-input-wrapper {
+    margin-left: 90px;
+}
+.main-right .title{
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 25px;
+
+}

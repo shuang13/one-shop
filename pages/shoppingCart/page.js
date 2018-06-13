@@ -8,7 +8,7 @@ var Page = function() {
     this.list = [];
     this.buyNum = [];
     this.goods = [];
-    this.cashList = [];
+    this.cashList = {};
 }
 Page.prototype = {
     init: function() {
@@ -104,13 +104,7 @@ Page.prototype = {
             '<div class="form-input-wrapper">' +
             '<input class="form-input" id="zhaoling" type="text">' +
             '</div>' +
-            '</div>' +
-            '<script>' +
-            '$("#shishou").on("blur", function(){' +
-            'var zhaoling = Number($("#shishou").val())-Number($("#yingshou").val());' +
-            '$("#zhaoling").val(zhaoling);' +
-            '});' +
-            '</script>';
+            '</div>';
 
 
         $.popUp({
@@ -125,7 +119,7 @@ Page.prototype = {
             _this.cashList.mode = '现金';
             _this.cashList.time = utils.getTime();
             store.addCashRegister(state, _this.cashList);
-
+            console.log(_this.cashList)
             // 更新数据库
             var oneShopDB = null;
             shopDB.openDB('oneShopDB', 1, oneShopDB, {
@@ -136,9 +130,14 @@ Page.prototype = {
                 shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
                 shopDB.putData(oneShopDB, 'oneShop', [state.cashRegister]);
                 shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
-                alert('删除成功');
+                alert('删除成功!');
 
 
+            });
+        }, function() {
+            $("#shishou").on("blur", function() {
+                var zhaoling = Number($("#shishou").val()) - Number($("#yingshou").val());
+                $("#zhaoling").val(zhaoling);
             });
         });
     },

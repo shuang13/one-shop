@@ -1,5 +1,5 @@
 (function($) {
-var PopUp = function(options, callback) {
+var PopUp = function(options, callback, bindOutEvent) {
     this.defaults = {
         title: "提示",
         context: "",
@@ -21,7 +21,6 @@ var PopUp = function(options, callback) {
     ].join('');
     if (callback && (typeof callback === 'function')) {
         this.callback = callback;
-
     }
     this.popbox = $('<div>');
     this.options = $.extend({}, this.defaults, options);
@@ -75,9 +74,12 @@ PopUp.prototype = {
     },
 
 };
-var popUp = function(options, callback) {
+var popUp = function(options, callback, bindOutEvent) {
     var popUp = new PopUp(options, callback);
     popUp.init();
+    if (bindOutEvent && (typeof bindOutEvent === 'function')) {
+        bindOutEvent();
+    }
     return popUp;
 }
 $.extend({

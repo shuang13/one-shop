@@ -5,7 +5,9 @@
     bottom: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 99,
+    z-index: 99;
+    overflow: auto;
+
 }
 .pop-box {
     margin: 20px auto;
