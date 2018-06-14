@@ -51,8 +51,9 @@ var State = function() {
         },
         // 当前用户
         currUser: {
-            name: '未登录',
-            avatar: ''
+            name: 'currUser',
+            user: '',
+            avatar: '',
         },
     }
 }
@@ -87,6 +88,23 @@ State.prototype = {
                         }]
                     };
                     shopDB.putData(oneShopDB, 'oneShop', [users]);
+                }
+
+            });
+            shopDB.getData(oneShopDB, 'oneShop', 'users', function(result) {
+                if (result) {
+                    var data = new Object();
+
+                    data.name = 'currUser';
+                    data.result = result;
+                    store.getData(state, data);
+                } else {
+                    var currUser = {
+                        name: 'currUser',
+                        user: '',
+                        avatar: '',
+                    };
+                    shopDB.putData(oneShopDB, 'oneShop', [currUser]);
                 }
 
             });

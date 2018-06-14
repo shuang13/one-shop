@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <title>one shop</title>
     <link rel="stylesheet" href="page.css">
+    <style>
+    .hidden {
+        display: none;
+    }
+    #click-btn {
+        margin-top: 20px;
+    }
+    #bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 99;
+        overflow: auto;
+    }
+    .login-form {
+        position: relative;
+    }
+    .logo i {
+        position: absolute;
+        right: 24px;
+        top: 15px;
+        cursor: pointer;
+    }
+    .logo i:hover {
+        color: #e13c13;
+    }
+    </style>
 </head>
 <body>
-
+    <div class="form-item" id="click-btn">
+    <button class="btn blue-btn" id="login-btn">登录</button>
+    <button class="btn red-btn">注册</button>
+    </div>
+    <div id="bg" class="hidden">
     <form class="login-form" action="##">
         <div class="logo">
             <img id="logo" src="../../assets/logo.png" alt="">
+            <i id="close-btn" class="fa fa-times" aria-hidden="true"></i>
         </div>
         <div class="form-item">
             <label class="form-label">账号:</label>
@@ -29,6 +64,7 @@
         <button class="btn blue-btn" id="submit-btn">登录</button>   
         <button class="btn white-btn" id="reset-btn">重置</button>   
     </form>
+    </div>
     <script src="../../libs/jq/jquery.min.js"></script>
     <script src="../../utils.js"></script>
     <script src="../../indexedDB/indexedDB.js"></script>
@@ -55,6 +91,12 @@
                 $('#username').siblings('p').html('');
                 
             }
+        });
+        $('#login-btn').on('click', function(){
+            $('#bg').removeClass('hidden');
+        });
+        $('#close-btn').on('click', function(){
+            $('#bg').addClass('hidden');
         });
     </script>
 </body>

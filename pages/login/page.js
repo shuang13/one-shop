@@ -13,7 +13,6 @@ Page.prototype = {
         $('#submit-btn').on('click', function(e) {
             _this.submitHandle();
         });
-        console.log('state:', state);
     },
     // 本地存储数据库IdexedDB
 
@@ -39,6 +38,7 @@ Page.prototype = {
             var name = state.users.userList[i].name;
             var password = state.users.userList[i].password;
             if (this.data.username == name) {
+
                 break;
             } else {
                 alert('该用户名不存在！');
@@ -46,6 +46,8 @@ Page.prototype = {
             }
         }
         if (this.data.password == password) {
+            state.currUser.user = this.data.username;
+            state.currUser.avatar = state.users.userList[i].avatar;
             return true;
         } else {
             alert('登录失败，密码错误');
@@ -55,8 +57,18 @@ Page.prototype = {
     submitHandle: function() {
         this.setData();
         if (this.isValidate() && this.isPass()) {
-            alert('登录成功')
-            utils.jumpUrl('pages/goodsList/index.html');
+            // 更新数据库
+            var oneShopDB = null;
+            shopDB.openDB('oneShopDB', 1, oneShopDB, {
+                name: 'oneShop',
+                key: 'name'
+            }, function(db) {
+                var oneShopDB = db;
+                shopDB.putData(oneShopDB, 'oneShop', [state.currUser]);
+                alert('登录成功');
+                utils.jumpUrl('./pages/goodsList/index.html');
+            });
+
         } else {
             return false;
         }
