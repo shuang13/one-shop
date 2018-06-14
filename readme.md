@@ -3,173 +3,138 @@
 
 ## 目录结构
 
-	├─ src
-	│  ├─ assets /静态样式
-	│  │  ├─ css 
-	│  │  │  ├─ button_item.css
-	│  │  │  ├─ button_item_demo.html
-	│  │  │  ├─ input_item.css
-	│  │  │  └─ input_item_demo.html
-	│  │  └─ reset.css
-	│  ├─ components /UI控件
-	│  │  ├─ calendar /时间选择器
-	│  │  │  ├─ calendar.css
-	│  │  │  ├─ calendar.js
-	│  │  │  └─ demo.html
-	│  │  ├─ chart /图表
-	│  │  │  ├─ chart.css
-	│  │  │  ├─ chart.js
-	│  │  │  └─ demo.html
-	│  │  ├─ popUp /弹窗
-	│  │  │  ├─ demo.html
-	│  │  │  ├─ popUp.css
-	│  │  │  └─ popUp.js
-	│  │  └─ sortTable /表格
-	│  │     ├─ demo.html
-	│  │     ├─ sortTable.css
-	│  │     └─ sortTable.js
-	│  ├─ indexedDB /数据库
-	│  │  ├─ indexedDB.js /数据库相关操作
-	│  │  ├─ state.js /数据存储
-	│  │  └─ store.js /数据存储相关操作
-	│  ├─ libs /第三方插件
-	│  │  ├─ ajaxfileupload /文件上传插件
-	│  │  │  ├─ ajaxfileupload.js
-	│  │  │  └─ bootstrap-filestyle.min.js
-	│  │  ├─ dialog 
-	│  │  │  ├─ css
-	│  │  │  │  ├─ animate.css
-	│  │  │  │  ├─ dialog.css
-	│  │  │  │  ├─ global.css
-	│  │  │  │  ├─ ie.css
-	│  │  │  │  └─ print.css
-	│  │  │  ├─ js
-	│  │  │  │  └─ dialog.js
-	│  │  │  └─ index.html
-	│  │  ├─ flatpickr
-	│  │  │  ├─ themes
-	│  │  │  │  ├─ airbnb.css
-	│  │  │  │  ├─ base16_flat.css
-	│  │  │  │  ├─ confetti.css
-	│  │  │  │  ├─ dark.css
-	│  │  │  │  ├─ material_blue.css
-	│  │  │  │  ├─ material_green.css
-	│  │  │  │  ├─ material_orange.css
-	│  │  │  │  └─ material_red.css
-	│  │  │  ├─ flatpickr.min.css
-	│  │  │  ├─ flatpickr.min.js
-	│  │  │  └─ zh.js
-	│  │  ├─ font-awesome /图标库
-	│  │  │  ├─ css
-	│  │  │  │  ├─ font-awesome.css
-	│  │  │  │  └─ font-awesome.min.css
-	│  │  │  ├─ fonts
-	│  │  │  │  ├─ FontAwesome.otf
-	│  │  │  │  ├─ fontawesome-webfont.eot
-	│  │  │  │  ├─ fontawesome-webfont.svg
-	│  │  │  │  ├─ fontawesome-webfont.ttf
-	│  │  │  │  ├─ fontawesome-webfont.woff
-	│  │  │  │  └─ fontawesome-webfont.woff2
-	│  │  │  ├─ less
-	│  │  │  │  ├─ animated.less
-	│  │  │  │  ├─ bordered-pulled.less
-	│  │  │  │  ├─ core.less
-	│  │  │  │  ├─ fixed-width.less
-	│  │  │  │  ├─ font-awesome.less
-	│  │  │  │  ├─ icons.less
-	│  │  │  │  ├─ larger.less
-	│  │  │  │  ├─ list.less
-	│  │  │  │  ├─ mixins.less
-	│  │  │  │  ├─ path.less
-	│  │  │  │  ├─ rotated-flipped.less
-	│  │  │  │  ├─ screen-reader.less
-	│  │  │  │  ├─ stacked.less
-	│  │  │  │  └─ variables.less
-	│  │  │  ├─ scss
-	│  │  │  │  ├─ _animated.scss
-	│  │  │  │  ├─ _bordered-pulled.scss
-	│  │  │  │  ├─ _core.scss
-	│  │  │  │  ├─ _fixed-width.scss
-	│  │  │  │  ├─ _icons.scss
-	│  │  │  │  ├─ _larger.scss
-	│  │  │  │  ├─ _list.scss
-	│  │  │  │  ├─ _mixins.scss
-	│  │  │  │  ├─ _path.scss
-	│  │  │  │  ├─ _rotated-flipped.scss
-	│  │  │  │  ├─ _screen-reader.scss
-	│  │  │  │  ├─ _stacked.scss
-	│  │  │  │  ├─ _variables.scss
-	│  │  │  │  └─ font-awesome.scss
-	│  │  │  └─ HELP-US-OUT.txt
-	│  │  ├─ jq
-	│  │  │  ├─ jquery.form.js
-	│  │  │  ├─ jquery.min.js
-	│  │  │  └─ jquery.validate.min.js
-	│  │  ├─ jqueryPagination /分页器
-	│  │  │  ├─ css
-	│  │  │  │  └─ jquery.pagination.css
-	│  │  │  ├─ js
-	│  │  │  │  └─ jquery.pagination.min.js
-	│  │  │  └─ index.html
-	│  │  └─ notice /弹窗插件
-	│  │     ├─ css
-	│  │     │  └─ jquery.notice.css
-	│  │     ├─ image
-	│  │     │  ├─ Thumbs.db
-	│  │     │  ├─ notice_close.png
-	│  │     │  └─ notice_warning.png
-	│  │     └─ jquery.notice.js
-	│  ├─ pages /页面
-	│  │  ├─ cashRegister /收银记录
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ dataStatistics /数据统计
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ goodsDetailList /详细信息
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ goodsList /商品列表
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ goodsStorage /商品入库
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ home /首页（商品列表）
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ login /登录
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ messageList /消息通知
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  ├─ personList /人员管理
-	│  │  │  ├─ index.html
-	│  │  │  ├─ page.css
-	│  │  │  └─ page.js
-	│  │  └─ shoppingCart /购物车
-	│  │     ├─ index.html
-	│  │     ├─ page.css
-	│  │     └─ page.js
-	│  ├─ index.html 
-	│  └─ utils.js /工具库
-	└─ readme.md
+	├─ assets
+	│  ├─ css
+	│  │  ├─ button_item.css
+	│  │  ├─ button_item_demo.html
+	│  │  ├─ goods_tab.html
+	│  │  ├─ input_item.css
+	│  │  ├─ input_item_demo.html
+	│  │  ├─ select_item_demo.html
+	│  │  └─ tab.css
+	│  ├─ Thumbs.db
+	│  ├─ add.png
+	│  ├─ logo-close.png
+	│  ├─ logo.png
+	│  └─ reset.css
+	├─ components
+	│  ├─ chart
+	│  │  ├─ chart.css
+	│  │  ├─ chart.js
+	│  │  └─ demo.html
+	│  ├─ popUp
+	│  │  ├─ demo.html
+	│  │  ├─ popUp.css
+	│  │  └─ popUp.js
+	│  └─ sortTable
+	│     ├─ demo.html
+	│     ├─ sortTable.css
+	│     └─ sortTable.js
+	├─ indexedDB
+	│  ├─ indexedDB.js
+	│  ├─ state.js
+	│  └─ store.js
+	├─ libs
+	│  ├─ echart
+	│  │  └─ echarts.min.js
+	│  ├─ flatpickr
+	│  │  ├─ themes
+	│  │  │  ├─ airbnb.css
+	│  │  │  ├─ base16_flat.css
+	│  │  │  ├─ confetti.css
+	│  │  │  ├─ dark.css
+	│  │  │  ├─ material_blue.css
+	│  │  │  ├─ material_green.css
+	│  │  │  ├─ material_orange.css
+	│  │  │  └─ material_red.css
+	│  │  ├─ flatpickr.min.css
+	│  │  ├─ flatpickr.min.js
+	│  │  └─ zh.js
+	│  ├─ font-awesome
+	│  │  ├─ css
+	│  │  │  ├─ font-awesome.css
+	│  │  │  └─ font-awesome.min.css
+	│  │  └─ fonts
+	│  │     ├─ FontAwesome.otf
+	│  │     ├─ fontawesome-webfont.eot
+	│  │     ├─ fontawesome-webfont.svg
+	│  │     ├─ fontawesome-webfont.ttf
+	│  │     ├─ fontawesome-webfont.woff
+	│  │     └─ fontawesome-webfont.woff2
+	│  └─ jq
+	│     ├─ jquery.form.js
+	│     ├─ jquery.min.js
+	│     └─ jquery.validate.min.js
+	├─ pages
+	│  ├─ cashRegister
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ dataStatistics
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ goodsDetail
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ goodsDetailList
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ goodsList
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ goodsStorage
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ home
+	│  │  ├─ home.css
+	│  │  ├─ home.js
+	│  │  └─ index.html
+	│  ├─ login
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ messageList
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  ├─ personList
+	│  │  ├─ index.html
+	│  │  ├─ page.css
+	│  │  └─ page.js
+	│  └─ shoppingCart
+	│     ├─ index.html
+	│     ├─ page.css
+	│     └─ page.js
+	├─ index.html
+	├─ readme.md
+	└─ utils.js
 
-## 任务分配
+
+## 功能
 + 登录界面
+	+ 保存登录状态
 + 商品列表
+	+ 显示全部商品
+	+ 加入购物车
 + 商品操作
+	+ 商品入库
+	+ 商品详细信息
+		+ 修改商品
+		+ 删除商品
 + 收银记录
 + 消息通知
+	+ 库存提醒
+	+ 保质期提醒
++ 购物车
+	+ 删除订单商品
+	+ 订单结账
 + 数据统计
+	+ 年销售额
 + 人员管理
-+ 待办事项
+	+ 新添人员
+	+ 删除人员
