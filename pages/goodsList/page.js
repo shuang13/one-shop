@@ -24,6 +24,7 @@ Page.prototype = {
 
     },
     btnHandler: function(ele) {
+        var _this = this;
         // 根据商品编码查询
         var coding = $(ele).attr('data-id');
         var goods = store.getByCoding(state, coding);
@@ -38,8 +39,18 @@ Page.prototype = {
         }, function(db) {
             var oneShopDB = db;
             shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
-            alert('提交成功');
+            _this.shopCartUpdate();
         });
+    },
+    shopCartUpdate: function() {
+        var number = state.shoppingCart.number;
+        if (number > 0) {
+            $('#cart-count').html(number);
+            $('#cart-count').removeClass('hidden');
+        } else {
+            $('#cart-count').html(number);
+            $('#cart-count').addClass('hidden');
+        }
     },
     render: function() {
         var str = '';

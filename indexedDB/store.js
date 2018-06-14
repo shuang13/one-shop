@@ -254,7 +254,8 @@ Store.prototype = {
             element.cellClassName = '';
         });
         for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
-            if (state.goods.goodsList[i].number <= state.messages.limitNumber) {
+
+            if (state.goods.goodsList[i].number <= 10) {
                 let message = new Object();
                 message.cellClassName = {
                     date: 'new-message'
@@ -263,6 +264,8 @@ Store.prototype = {
                 message.content = '商品：' + state.goods.goodsList[i].name + '，编码：' + state.goods.goodsList[i].coding + '，仅剩 ' + state.goods.goodsList[i].number + ' 件，请尽快补充！';
                 state.messages.messageList.unshift(message);
                 state.messages.number += 1;
+                console.log(message)
+
             }
         }
         state.messages.today = year + '-' + addZero(month) + '-' + addZero(day);
@@ -278,7 +281,6 @@ Store.prototype = {
     // 检查商品保质期
     checkGoodsDate(state) {
         let date = new Date();
-        let nowTime = date.getTime();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
         let day = date.getDate();
@@ -292,39 +294,39 @@ Store.prototype = {
             return val;
         }
         let today = year + '-' + addZero(month) + '-' + addZero(day);
-        if (today !== state.messages.today) {
-            // 重置新消息提醒
-            state.messages.messageList.forEach(element => {
-                element.cellClassName = '';
-            });
-            for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
-                let goodsTime = state.goods.goodsList[i].date.getTime();
-                let dateRange = Math.floor((goodsTime - nowTime) / 1000 / 60 / 60 / 24);
-                if (dateRange <= state.messages.limitDate) {
-                    let message = new Object();
-                    message.cellClassName = {
-                        date: 'new-message'
-                    };
-                    message.date = today + ' ' + addZero(hour) + ':' + addZero(min);
-                    if (dateRange > 0) {
-                        message.content = '商品：' + state.goods.goodsList[i].name + '，编码：' + state.goods.goodsList[i].coding + '，保质期仅剩 ' + dateRange + ' 天，请尽快销售或处理！';
-                    } else {
-                        message.content = '商品：' + state.goods.goodsList[i].name + '，编码：' + state.goods.goodsList[i].coding + '，已过期，请立即下架处理！';
-                    }
-                    state.messages.messageList.unshift(message);
-                    state.messages.number += 1;
+        // 重置新消息提醒
+        state.messages.messageList.forEach(element => {
+            element.cellClassName = '';
+        });
+        for (let i = 0, len = state.goods.goodsList.length; i < len; i++) {
+            let goodsTime = state.goods.goodsList[i].date;
+            goodsTime = goodsTime.split("-")[0] + goodsTime.split("-")[1] + goodsTime.split("-")[2];
+            var nowTime = today.split("-")[0] + today.split("-")[1] + today.split("-")[2];
+            let dateRange = goodsTime - nowTime;
+            if (dateRange <= 10) {
+                let message = new Object();
+                message.cellClassName = {
+                    date: 'new-message'
+                };
+                message.date = today + ' ' + addZero(hour) + ':' + addZero(min);
+                if (dateRange > 0) {
+                    message.content = '商品：' + state.goods.goodsList[i].name + '，编码：' + state.goods.goodsList[i].coding + '，保质期仅剩 ' + dateRange + ' 天，请尽快销售或处理！';
+                } else {
+                    message.content = '商品：' + state.goods.goodsList[i].name + '，编码：' + state.goods.goodsList[i].coding + '，已过期，请立即下架处理！';
                 }
+                state.messages.messageList.unshift(message);
+                state.messages.number += 1;
             }
-            state.messages.today = today;
-            let oneShopDB = null;
-            shopDB.openDB('oneShopDB', 1, oneShopDB, {
-                name: 'oneShop',
-                key: 'name'
-            }, function(db) {
-                let oneShopDB = db;
-                shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
-            });
         }
+        state.messages.today = today;
+        let oneShopDB = null;
+        shopDB.openDB('oneShopDB', 1, oneShopDB, {
+            name: 'oneShop',
+            key: 'name'
+        }, function(db) {
+            let oneShopDB = db;
+            shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
+        });
     },
     // 重置新消息数字
     resetMessageNumber(state) {

@@ -10,7 +10,7 @@ var State = function() {
                 jurisdiction: '一级',
                 telephone: '###########',
                 address: '############',
-                avatar: 'http://img.qq1234.org/uploads/allimg/150128/20123A027-5.jpg'
+                avatar: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075688132,2273924654&fm=27&gp=0.jpg'
             }]
         },
         // 筛选商品列表
@@ -84,7 +84,7 @@ State.prototype = {
                             jurisdiction: '一级',
                             telephone: '###########',
                             address: '############',
-                            avatar: 'http://img.qq1234.org/uploads/allimg/150128/20123A027-5.jpg'
+                            avatar: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075688132,2273924654&fm=27&gp=0.jpg'
                         }]
                     };
                     shopDB.putData(oneShopDB, 'oneShop', [users]);

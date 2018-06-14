@@ -127,12 +127,13 @@ Page.prototype = {
                 key: 'name'
             }, function(db) {
                 var oneShopDB = db;
+                state.shoppingCart.number = 0;
                 shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
                 shopDB.putData(oneShopDB, 'oneShop', [state.cashRegister]);
                 shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
-                alert('删除成功!');
-
-
+                alert('提交成功!');
+                store.checkGoodsNumber(state);
+                store.checkGoodsDate(state);
             });
         }, function() {
             $("#shishou").on("blur", function() {

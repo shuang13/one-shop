@@ -13,17 +13,19 @@
 	<header id="page-header">
 		<h5 class="logo">One Shop</h5>
 		<div class="inform">
-			<span class="badge">
-				<a href="../shoppingCart/index.html" title="购物车" class="cart">
-					<i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i>
-				</a>
-			</span>
-			<span class="badge">
-				<a href="###" title="消息通知" class="router-link-exact-active router-link-active info">
-					<i class="fa fa-commenting" aria-hidden="true"></i>
-				</a>
-			</span>
-		</div>
+            <span class="badge">
+                <a href="../shoppingCart/index.html" title="购物车" class="cart">
+                    <i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i>
+                    <sup class="badge-count hidden" id="cart-count">0</sup>
+                </a>
+            </span>
+            <span class="badge">
+                <a href="../messageList/index.html" title="消息通知" class="router-link-exact-active router-link-active info">
+                    <i class="fa fa-commenting" aria-hidden="true"></i>
+                    <sup class="badge-count hidden" id="message-count">0</sup>
+                </a>
+            </span>
+        </div>
 	</header>
 	<div class="main">
 		<div class="main-left">
@@ -60,6 +62,9 @@
 				<li>
 					<a href="../messageList/index.html" class="menu-item link"><i class="icon fa fa-commenting" aria-hidden="true"></i>消息通知</a>
 				</li>
+				<li>
+                    <a href="../shoppingCart/index.html" class="menu-item link"><i class="icon fa fa-cart-plus" aria-hidden="true"></i>购物车</a>
+                </li>
 				<li>
 					<a href="../dataStatistics/index.html" class="menu-item link"><i class="icon fa fa-bar-chart" aria-hidden="true"></i>数据统计</a>
 				</li>

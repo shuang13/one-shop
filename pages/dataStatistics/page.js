@@ -18,7 +18,7 @@ Page.prototype = {
         }
         option = {
             title: {
-                text: '年度销售额'
+                text: '年度销售额(元)'
             },
             tooltip: {
                 trigger: 'axis'

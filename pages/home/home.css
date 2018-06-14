@@ -250,3 +250,26 @@ body {
     margin-left: 10px;
     border-radius: 50%;
 }
+.badge-count {
+    position: absolute;
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    background: #ed3f14;
+    border: 1px solid transparent;
+    color: #fff;
+    line-height: 18px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    -ms-transform-origin: -10% center;
+    transform-origin: -10% center;
+    z-index: 10;
+    box-shadow: none;
+}
+.hidden {
+    display: none;
+}

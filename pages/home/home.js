@@ -22,6 +22,24 @@ $(document).ready(function() {
         }
     }
 
+    function shopCart() {
+        var number = state.shoppingCart.number;
+        var messages = state.messages.number;
+        if (number > 0) {
+            $('#cart-count').html(number);
+            $('#cart-count').removeClass('hidden');
+        } else {
+            $('#cart-count').html(number);
+            $('#cart-count').addClass('hidden');
+        }
+        if (messages > 0) {
+            $('#message-count').html(messages);
+            $('#message-count').removeClass('hidden');
+        } else {
+            $('#message-count').html(messages);
+            $('#message-count').addClass('hidden');
+        }
+    }
 
     var r = 0;
     $(".sub-menu").click(function() {
@@ -35,6 +53,8 @@ $(document).ready(function() {
     });
     setTimeout(function() {
         loginUser();
+        shopCart();
+
     }, 500);
 
 });

@@ -65,6 +65,7 @@ Page.prototype = {
             }, function(db) {
                 var oneShopDB = db;
                 shopDB.putData(oneShopDB, 'oneShop', [state.currUser]);
+
                 alert('登录成功');
                 utils.jumpUrl('./pages/goodsList/index.html');
             });
