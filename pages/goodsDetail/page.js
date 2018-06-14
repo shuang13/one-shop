@@ -109,9 +109,21 @@ Page.prototype = {
             }, function(db) {
                 var oneShopDB = db;
                 shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
-                alert('提交成功！');
+                alert('修改成功！');
+                utils.jumpUrl('../goodsDetailList/index.html');
+
             });
         }, function() {
+            $('#category').val(_this.goods.category);
+            $('#coding').val(_this.goods.coding);
+            $('#date').val(_this.goods.date);
+            $('#name').val(_this.goods.name);
+            $('#number').val(_this.goods.number);
+            $('#price').val(_this.goods.price);
+            $('#img-preview').css({
+                'background': 'url(' + _this.goods.image + ') ',
+                'background-size': '200px 200px',
+            });
             $('.file-btn').on('change', function(e) {
                 _this.readAsDataURL();
             });
@@ -128,9 +140,10 @@ Page.prototype = {
         }, function(db) {
             var oneShopDB = db;
             shopDB.putData(oneShopDB, 'oneShop', [state.goods]);
-            alert('提交成功');
+            alert('删除成功！');
+            utils.jumpUrl('../goodsDetailList/index.html');
+
         });
-        console.log(2)
     },
     drawTable: function() {
         var sortTable = new SortTable({
@@ -147,7 +160,6 @@ Page.prototype = {
         this.data.coding = utils.getUrlParam();
         store.getDetailGoods(state, _this.data);
         this.goods = state.goods.detailGoods;
-        console.log(this.goods)
         this.list = ['<img src="' + this.goods['image'] + '">',
             this.goods['name'],
             this.goods['coding'],

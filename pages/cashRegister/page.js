@@ -19,7 +19,6 @@ Page.prototype = {
 
     },
     btnHandler: function(ele) {
-        console.log($(ele).attr('data-id'));
         utils.jumpUrl('../goodsDetail/index.html?coding=' + $(ele).attr('data-id'));
     },
     drawTable: function() {
@@ -31,10 +30,8 @@ Page.prototype = {
         sortTable.init();
         this.eventListener();
     },
-    eventListener: function() {},
     setData: function() {
         var cashRegister = state.cashRegister.cashRegisterList;
-        console.log(cashRegister)
 
         for (var i = 0; i < cashRegister.length; i++) {
             this.list[i] = [cashRegister[i]['time'],

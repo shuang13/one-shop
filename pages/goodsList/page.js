@@ -16,7 +16,6 @@ Page.prototype = {
         var _this = this;
         _this.render();
         $('#goods-list').on('click', function(e) {
-            console.log(e.target)
             if (e.target.className == 'cover') {
                 _this.btnHandler(e.target);
             }

@@ -9,7 +9,6 @@ var Page = function() {
 }
 Page.prototype = {
     init: function() {
-
         var _this = this;
         _this.setData();
         _this.drawTable();
@@ -18,7 +17,6 @@ Page.prototype = {
                 _this.deleteHandler(e.target);
             }
         })
-
     },
 
     deleteHandler: function(ele) {
@@ -35,6 +33,7 @@ Page.prototype = {
             var oneShopDB = db;
             shopDB.putData(oneShopDB, 'oneShop', [state.messages]);
             alert('删除成功');
+            utils.jumpUrl('./index.html', 500);
         });
     },
     drawTable: function() {

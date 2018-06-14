@@ -212,11 +212,13 @@ body {
 }
 
 #page-footer span {
+    display: inline-block;
     color: #2d8cf0;
     background: 0 0;
     text-decoration: none;
     outline: 0;
     cursor: pointer;
+    line-height: 32px;
     transition: color .2s ease;
 }
 

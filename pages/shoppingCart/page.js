@@ -71,6 +71,7 @@ Page.prototype = {
             var oneShopDB = db;
             shopDB.putData(oneShopDB, 'oneShop', [state.shoppingCart]);
             alert('删除成功');
+            utils.jumpUrl('./index.html');
 
         });
 
@@ -119,7 +120,6 @@ Page.prototype = {
             _this.cashList.mode = '现金';
             _this.cashList.time = utils.getTime();
             store.addCashRegister(state, _this.cashList);
-            console.log(_this.cashList)
             // 更新数据库
             var oneShopDB = null;
             shopDB.openDB('oneShopDB', 1, oneShopDB, {
@@ -134,6 +134,7 @@ Page.prototype = {
                 alert('提交成功!');
                 store.checkGoodsNumber(state);
                 store.checkGoodsDate(state);
+                utils.jumpUrl('./index.html', 500);
             });
         }, function() {
             $("#shishou").on("blur", function() {

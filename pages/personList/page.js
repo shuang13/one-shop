@@ -37,6 +37,7 @@ Page.prototype = {
             var oneShopDB = db;
             shopDB.putData(oneShopDB, 'oneShop', [state.users]);
             alert('删除成功');
+            utils.jumpUrl('./index.html', 500);
 
         });
     },
@@ -117,7 +118,6 @@ Page.prototype = {
             _this.data.telephone = $('#telephone').val();
             _this.data.address = $('#address').val();
             _this.data.password = $('#password').val();
-            console.log(_this.data)
             store.addNewUser(state, _this.data);
 
             // 更新数据库
@@ -129,6 +129,7 @@ Page.prototype = {
                 var oneShopDB = db;
                 shopDB.putData(oneShopDB, 'oneShop', [state.users]);
                 alert('提交成功！');
+                utils.jumpUrl('./index.html', 500);
             });
         }, function() {
             $('.file-btn').on('change', function(e) {

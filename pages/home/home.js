@@ -2,9 +2,7 @@ $(document).ready(function() {
     function loginUser() {
         var user = state.currUser.user;
         var userImg = state.currUser.avatar;
-        console.log(user)
         if (user == '' || typeof (user) == 'undefined') {
-
             $(".person").mouseover(function() {
                 $(".change-acount").css("display", "block");
             });
@@ -18,7 +16,6 @@ $(document).ready(function() {
             $('#login-state').html(user);
             $('.avatar-circle').html('<img id="user-img" src="" alt="">');
             $('#user-img').attr('src', userImg);
-
         }
     }
 
@@ -43,8 +40,6 @@ $(document).ready(function() {
 
     var r = 0;
     $(".sub-menu").click(function() {
-        console.log(r);
-
         $(".sub-menu-item").slideToggle(function() {
             r += 180;
             $(".jiantou1").css("transform", "rotate(" + r + "deg)");

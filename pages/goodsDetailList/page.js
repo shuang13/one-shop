@@ -22,7 +22,6 @@ Page.prototype = {
 
     },
     btnHandler: function(ele) {
-        console.log($(ele).attr('data-id'));
         utils.jumpUrl('../goodsDetail/index.html?coding=' + $(ele).attr('data-id'));
     },
     drawTable: function() {
