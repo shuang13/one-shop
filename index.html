@@ -41,7 +41,7 @@
         });
         $('#password').on('blur', function() {
             $('#logo').attr('src', '../../assets/logo.png');
-            if ($('#password').val()==='') {
+            if ($('#password').val() === '') {
                 $('#password').siblings('p').html('密码不能为空');
             }else {
                 $('#password').siblings('p').html('');
@@ -49,7 +49,7 @@
             }
         });
         $('#username').on('blur', function() {
-            if ($('#username').val()==='') {
+            if ($('#username').val() === '') {
                 $('#username').siblings('p').html('账号不能为空');
             } else {
                 $('#username').siblings('p').html('');

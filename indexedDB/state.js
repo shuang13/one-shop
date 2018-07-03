@@ -176,51 +176,6 @@ State.prototype = {
                     shopDB.putData(oneShopDB, 'oneShop', [messages]);
                 }
             });
-            shopDB.getData(oneShopDB, 'oneShop', 'todo', function(result) {
-                if (result) {
-                    var data = new Object();
-                    data.name = 'todo';
-                    data.result = result;
-                    store.getData(state, data);
-                    setTimeout(function() {
-                        for (var i = 0, len = state.todo.todoList.length; i < len; i++) {
-                            if (state.todo.todoList[i].state === '待完成') {
-                                var timer = null;
-                                var content = state.todo.todoList[i].content;
-                                var time = state.todo.todoList[i].time;
-                                var planTime = new Date(state.todo.todoList[i].time).getTime();
-                                timer = setInterval(function() {
-                                    console.log(state.todo.todoList[i]);
-                                    var newTime = new Date().getTime();
-                                    if (planTime - newTime <= 0) {
-                                        // _this.$store.commit('changeTodoState', time);
-                                        var oneShopDB = null;
-                                        shopDB.openDB('oneShopDB', 1, oneShopDB, {
-                                            name: 'oneShop',
-                                            key: 'name'
-                                        }, function(db) {
-                                            var oneShopDB = db;
-                                            shopDB.putData(oneShopDB, 'oneShop', [state.todo]);
-                                        });
-                                        // $Notice.warning({
-                                        //     title: '待办事件提醒',
-                                        //     desc: content,
-                                        //     duration: 0
-                                        // });
-                                        clearInterval(timer);
-                                    }
-                                }, 1000);
-                            }
-                        }
-                    }, 0);
-                } else {
-                    var todo = {
-                        name: 'todo',
-                        todoList: []
-                    };
-                    shopDB.putData(oneShopDB, 'oneShop', [todo]);
-                }
-            });
         });
     }
 };
