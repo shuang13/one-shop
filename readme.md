@@ -1,6 +1,11 @@
 ## One Shop
 一个基于Jq + IndexedDB商店管理系统Web APP
 
+## 测试账号
+https://shuang13.github.io/one-shop/
+用户名：Admin
+密码：admin
+
 ## 目录结构
 
 	├─ assets
